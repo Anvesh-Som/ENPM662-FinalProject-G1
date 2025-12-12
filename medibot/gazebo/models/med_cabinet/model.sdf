@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="med_cabinet">
+    <!-- Static so it doesn’t move when bumped -->
+    <static>true</static>
+
+    <link name="cabinet_link">
+      <!-- Pose of the *link origin* relative to wherever you place the model in the world -->
+      <pose>2 2 0 0 0 0</pose>
+
+      <visual name="cabinet_visual">
+        <geometry>
+          <mesh>
+            <!-- This URI is relative to GAZEBO_MODEL_PATH -->
+            <uri>model://med_cabinet/meshes/cabinet.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <!-- For collisions you can reuse the mesh or approximate with boxes -->
+      <collision name="cabinet_collision">
+        <geometry>
+          <mesh>
+            <uri>model://med_cabinet/meshes/cabinet.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

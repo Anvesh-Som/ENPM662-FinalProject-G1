@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="medibot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.26407 -0.20563 -2.4701E-08"
+        rpy="0 0 0" />
+      <mass
+        value="210.34" />
+      <inertia
+        ixx="26.206"
+        ixy="-1.1416"
+        ixz="-7.5529E-06"
+        iyy="38.898"
+        iyz="3.5248E-07"
+        izz="15.618" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right_wheel_link">
+    <inertial>
+      <origin
+        xyz="3.0531E-16 2.7756E-17 -0.0381"
+        rpy="0 0 0" />
+      <mass
+        value="1.5322" />
+      <inertia
+        ixx="0.0051046"
+        ixy="2.1684E-19"
+        ixz="-1.3831E-19"
+        iyy="0.0051046"
+        iyz="4.3387E-19"
+        izz="0.0091888" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.1016 -0.56515"
+      rpy="0 0 0.99209" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left_wheel_link">
+    <inertial>
+      <origin
+        xyz="-2.6368E-16 1.6653E-16 0.0381"
+        rpy="0 0 0" />
+      <mass
+        value="1.5322" />
+      <inertia
+        ixx="0.0051046"
+        ixy="6.5052E-19"
+        ixz="-3.0022E-19"
+        iyy="0.0051046"
+        iyz="9.2589E-19"
+        izz="0.0091888" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.1016 0.56515"
+      rpy="0 0 0.99209" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="shoulder_link">
+    <inertial>
+      <origin
+        xyz="-0.046074 -4.6313E-17 8.8577E-18"
+        rpy="0 0 0" />
+      <mass
+        value="12.432" />
+      <inertia
+        ixx="0.35557"
+        ixy="1.8284E-17"
+        ixz="2.6445E-17"
+        iyy="0.21292"
+        iyz="9.9025E-19"
+        izz="0.20107" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/shoulder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/shoulder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.33655 0"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="shoulder_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="10" />
+  </joint>
+  <link
+    name="upper_arm_link">
+    <inertial>
+      <origin
+        xyz="2.0161E-16 0.7122 -1.3205E-16"
+        rpy="0 0 0" />
+      <mass
+        value="19.092" />
+      <inertia
+        ixx="4.0783"
+        ixy="-5.1776E-16"
+        ixz="-2.5741E-19"
+        iyy="0.044116"
+        iyz="2.4518E-16"
+        izz="4.071" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/upper_arm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/upper_arm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="upper_arm_joint"
+    type="revolute">
+    <origin
+      xyz="-0.1778 0 0"
+      rpy="1.5708 1.5708 3.1417" />
+    <parent
+      link="shoulder_link" />
+    <child
+      link="upper_arm_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.724"
+      upper="1.6"
+      effort="1000"
+      velocity="10" />
+  </joint>
+  <link
+    name="forearm_link">
+    <inertial>
+      <origin
+        xyz="0 -0.5588 -3.08714524865529E-16"
+        rpy="0 0 0" />
+      <mass
+        value="5.85882853421145" />
+      <inertia
+        ixx="0.727571239504238"
+        ixy="7.79270320769273E-17"
+        ixz="-1.34562525520913E-10"
+        iyy="0.00860398076338021"
+        iyz="-4.96431104018498E-17"
+        izz="0.734757764586194" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/forearm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/forearm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="forearm_joint"
+    type="revolute">
+    <origin
+      xyz="0 1.6256 0"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="upper_arm_link" />
+    <child
+      link="forearm_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.278"
+      upper="4.421"
+      effort="1000"
+      velocity="10" />
+  </joint>
+  <link
+    name="wrist_link">
+    <inertial>
+      <origin
+        xyz="-0.118648814072355 -2.44680794939558E-16 -4.44089209850063E-16"
+        rpy="0 0 0" />
+      <mass
+        value="4.35433420414567" />
+      <inertia
+        ixx="0.0793234207582875"
+        ixy="3.48443075169667E-18"
+        ixz="-4.28268639274364E-18"
+        iyy="0.0309744477679611"
+        iyz="7.01449159444982E-19"
+        izz="0.0792232632613355" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/wrist_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/wrist_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_joint"
+    type="revolute">
+    <origin
+      xyz="0 -1.1176 0"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="forearm_link" />
+    <child
+      link="wrist_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-2.065"
+      upper="2.065"
+      effort="1000"
+      velocity="10" />
+  </joint>
+  <link
+    name="left_finger_link">
+    <inertial>
+      <origin
+        xyz="0.190057084391042 0.0127 4.44089209850063E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.954391471331755" />
+      <inertia
+        ixx="0.000881419815259494"
+        ixy="6.72210099030885E-20"
+        ixz="-4.57361267253083E-19"
+        iyy="0.0171927460500775"
+        iyz="1.62287750665423E-19"
+        izz="0.0164130909530631" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/left_finger_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/left_finger_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_finger_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.15875 -0.16484 0"
+      rpy="0 0 3.1416" />
+    <parent
+      link="wrist_link" />
+    <child
+      link="left_finger_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.16"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_finger_link">
+    <inertial>
+      <origin
+        xyz="0.190057084391041 0.0127 4.44089209850063E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.954391471331755" />
+      <inertia
+        ixx="0.000881419815259493"
+        ixy="6.18099304954257E-20"
+        ixz="5.61142716223079E-18"
+        iyy="0.0171927460500775"
+        iyz="-1.31288886796317E-19"
+        izz="0.016413090953063" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/right_finger_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/right_finger_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_finger_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.15875 0.1649 0"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="wrist_link" />
+    <child
+      link="right_finger_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.16"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+
+  <!-- ros2_control hardware interface for Gazebo -->
+  <ros2_control name="GazeboSimSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+
+    <!-- Differential drive wheels: velocity-controlled -->
+    <joint name="left_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="right_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <!-- Arm joints: position-controlled -->
+    <joint name="shoulder_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="upper_arm_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="forearm_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="wrist_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <!-- Gripper fingers: position-controlled prismatic joints -->
+    <joint name="left_finger_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="right_finger_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+
+  <gazebo>
+    <plugin filename="gz_ros2_control-system"
+            name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <!-- Where to read URDF from -->
+          <parameters>/home/anvesh/hospital_ws/install/medibot/share/medibot/config/medibot_controllers.yaml</parameters>
+      <robot_param>robot_description</robot_param>
+      <robot_param_node>robot_state_publisher</robot_param_node>
+    </plugin>
+  </gazebo>
+</robot>

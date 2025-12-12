@@ -1,0 +1,99 @@
+# Frame name of the cabinet in Gazebo / TF
+cabinet_frame: cabinet
+
+# Docking stations for each column in front of the 3x3 cabinet
+# Replace x, y, theta with your actual world coordinates (m, rad).
+docking_stations:
+  col0:
+    x: 1.0
+    y: 0.0
+    theta: 0.0
+  col1:
+    x: 1.0
+    y: 0.5
+    theta: 0.0
+  col2:
+    x: 1.0
+    y: 1.0
+    theta: 0.0
+
+# 3x3 cube layout (rows: 0 = bottom, 2 = top; cols: 0..2 left to right)
+# center: [x, y, z] in cabinet_frame
+cubes:
+  cube_0_0:
+    col: 0
+    row: 0
+    center: [0.1, 0.0, 0.1]
+  cube_0_1:
+    col: 1
+    row: 0
+    center: [0.1, 0.25, 0.1]
+  cube_0_2:
+    col: 2
+    row: 0
+    center: [0.1, 0.50, 0.1]
+
+  cube_1_0:
+    col: 0
+    row: 1
+    center: [0.1, 0.0, 0.25]
+  cube_1_1:
+    col: 1
+    row: 1
+    center: [0.1, 0.25, 0.25]
+  cube_1_2:
+    col: 2
+    row: 1
+    center: [0.1, 0.50, 0.25]
+
+  cube_2_0:
+    col: 0
+    row: 2
+    center: [0.1, 0.0, 0.40]
+  cube_2_1:
+    col: 1
+    row: 2
+    center: [0.1, 0.25, 0.40]
+  cube_2_2:
+    col: 2
+    row: 2
+    center: [0.1, 0.50, 0.40]
+
+# Items by name; each maps to a cube and height.
+# height is the item's height in meters (for future grasping logic, etc.).
+items:
+  paracetamol:
+    cube_id: cube_0_0
+    height: 0.10
+
+  ibuprofen:
+    cube_id: cube_0_1
+    height: 0.10
+
+  amoxicillin:
+    cube_id: cube_0_2
+    height: 0.12
+
+  cough_syrup:
+    cube_id: cube_1_0
+    height: 0.20
+
+  antiseptic_cream:
+    cube_id: cube_1_1
+    height: 0.05
+
+  insulin:
+    cube_id: cube_1_2
+    height: 0.08
+
+  bandages:
+    cube_id: cube_2_0
+    height: 0.05
+
+  saline:
+    cube_id: cube_2_1
+    height: 0.22
+
+  vitamin_tablets:
+    cube_id: cube_2_2
+    height: 0.10
